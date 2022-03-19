@@ -1,1 +1,1 @@
-# SQL--Assignments-Exercises
+# SQL - Assignments and Exercises
