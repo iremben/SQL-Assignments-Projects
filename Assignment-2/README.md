@@ -1,4 +1,4 @@
-## Assignment-2
+## <a href=https://github.com/iremben/SQL-Assignments-Exercises/blob/main/Assignment-2/assignment2.sql>Assignment-2</a>
 
 You need to create a report on whether customers who purchased the product named '2TB Red 5400 rpm SATA III 3.5 Internal NAS HDD' buy the products below or not.
 
