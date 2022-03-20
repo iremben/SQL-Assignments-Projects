@@ -14,7 +14,7 @@ You need to create a report on whether customers who purchased the product named
 
 To generate this report, you are required to use the appropriate SQL Server Built-in string functions (ISNULL(), NULLIF(), etc.) and Joins, as well as basic SQL knowledge. As a result, a report exactly like the attached file is expected from you.
 
-* people who have bought the *Polk Audio - 50 W Woofer - Black*
+* people who have bought the *Polk Audio - 50 W Woofer - Black*:
 
 
 <pre><code>
@@ -34,7 +34,7 @@ order by a.customer_id
 
 
 
-* people who have bought the *SB-2000 12 500W Subwoofer (Piano Gloss Black)*
+* people who have bought the *SB-2000 12 500W Subwoofer (Piano Gloss Black)*:
 
 
 <pre><code>
@@ -53,7 +53,7 @@ order by a.customer_id
 </code></pre>
 
 
-* people who have bought the *Virtually Invisible 891 In-Wall Speakers (Pair)*
+* people who have bought the *Virtually Invisible 891 In-Wall Speakers (Pair)*:
 
 
 <pre><code>
@@ -71,6 +71,7 @@ where d.product_name = 'Virtually Invisible 891 In-Wall Speakers (Pair)'
 order by a.customer_id 
 </code></pre>
 
+* whether customers who purchased the product named '2TB Red 5400 rpm SATA III 3.5 Internal NAS HDD' buy the products below or not:
 <pre><code>
 select 
 	distinct A.customer_id, 
