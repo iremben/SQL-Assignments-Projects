@@ -1,7 +1,5 @@
 ## Charlie's Chocolate Factory company produces chocolates.
 
-
-
 Do the following exercises, using the data model.
 
 * Create a database named "Manufacturer"
@@ -9,7 +7,9 @@ Do the following exercises, using the data model.
 * Create the tables in the database.
 
 * Define table constraints.
-* 
+
+
+
 <pre><code>
 CREATE DATABASE Manufacturer;
 
@@ -26,6 +26,8 @@ USE Manufacturer;
 * The following product information is stored: product name, 
 
 * product ID, and quantity on hand. 
+
+
 
 <pre><code>
 CREATE TABLE product(
@@ -52,6 +54,7 @@ CREATE TABLE product(
 * who supply them, when and how much they supplied, and products
 
 * in which they are used. 
+
 
 
 <pre><code>
@@ -163,24 +166,24 @@ REFERENCES dbo.supplier (supplier_id)
 
 </code></pre>
 
-* Assumptions
 
+
+## Assumptions
 
 
 * A supplier can exist without providing components.     
-
-
 
 * A component does not have to be associated with a supplier. 
 
 * It may already have been in the inventory.
 
-
-
 * A component does not have to be associated with a product. 
 
 * Not all components are used in products.
 
-
-
 * A product cannot exist without components.     
+
+
+
+
+
