@@ -29,7 +29,7 @@ on C.order_id = B.order_id
 inner join product.product D 
 on D.product_id = C.product_id
 where d.product_name = 'Polk Audio - 50 W Woofer - Black'
-order by a.customer_id 
+order by a.customer_id ;
 </code></pre>
 
 
@@ -49,7 +49,7 @@ on C.order_id = B.order_id
 inner join product.product D 
 on D.product_id = C.product_id
 where d.product_name = 'SB-2000 12 500W Subwoofer (Piano Gloss Black)'
-order by a.customer_id 
+order by a.customer_id ;
 </code></pre>
 
 
@@ -68,7 +68,7 @@ on C.order_id = B.order_id
 inner join product.product D 
 on D.product_id = C.product_id
 where d.product_name = 'Virtually Invisible 891 In-Wall Speakers (Pair)'
-order by a.customer_id 
+order by a.customer_id ;
 </code></pre>
 
 * whether customers who purchased the product named '2TB Red 5400 rpm SATA III 3.5 Internal NAS HDD' buy the products below or not:
@@ -130,5 +130,5 @@ left join (
 	where d.product_name = 'Virtually Invisible 891 In-Wall Speakers (Pair)') G
 on a.customer_id = g.customer_id
 where D.product_name = '2TB Red 5400 rpm SATA III 3.5 Internal NAS HDD'
-order by customer_id
+order by customer_id;
 </code></pre>
