@@ -18,14 +18,13 @@ CREATE DATABASE Manufacturer;
 
 USE Manufacturer;
 
-´´
+
 
 * The following product information is stored: product name, 
 
 * product ID, and quantity on hand. 
 
-
-´´
+<pre><code>
 CREATE TABLE product(
 
 	product_id INT NOT NULL PRIMARY KEY,
@@ -34,9 +33,10 @@ CREATE TABLE product(
 
 	quantity INT NOT NULL
 
- );
+);
+</code></pre>
 
- ´´
+
 
 * These chocolates are made up of many components. Each component
 
