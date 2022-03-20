@@ -9,14 +9,17 @@ Do the following exercises, using the data model.
 * Create the tables in the database.
 
 * Define table constraints.
-
-´´
-
+* 
+<pre><code>
 CREATE DATABASE Manufacturer;
 
 
 
 USE Manufacturer;
+
+
+);
+</code></pre>
 
 
 
@@ -51,7 +54,7 @@ CREATE TABLE product(
 * in which they are used. 
 
 
-´´
+<pre><code>
 CREATE TABLE prod_comp(
 
 	component_id INT NOT NULL,
@@ -126,14 +129,14 @@ FOREIGN KEY (component_id)
 
 REFERENCES dbo.components (component_id)
 
-´´
+</code></pre>
 
 * On the other hand following supplier information is stored: 
 
 * supplier ID, name, and activation status.
 
 
-´´
+<pre><code>
  CREATE TABLE supplier(
 
 	supplier_id INT NOT NULL PRIMARY KEY,
@@ -158,7 +161,7 @@ FOREIGN KEY (supplier_id)
 
 REFERENCES dbo.supplier (supplier_id)
 
- ´´
+</code></pre>
 
 * Assumptions
 
