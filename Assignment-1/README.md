@@ -1,4 +1,5 @@
-## Charlie's Chocolate Factory company produces chocolates.
+## <a href=https://github.com/iremben/SQL-Assignments-Exercises/blob/main/Assignment-1/assignment-1.sql>Assignment 1</a>
+Charlie's Chocolate Factory company produces chocolates.
 
 Do the following exercises, using the data model.
 
