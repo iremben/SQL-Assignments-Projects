@@ -1,4 +1,4 @@
-<a href=https://github.com/iremben/SQL-Assignments-Exercises/blob/main/Assignment-3/database.png>
+<img src=https://github.com/iremben/SQL-Assignments-Exercises/blob/main/Assignment-3/database.png alt='result'>
 
 Below you see a table of the actions of customers visiting the website by clicking on two different types of advertisements given by an E-Commerce company. Write a query to return the conversion rate for each Advertisement type.
 
