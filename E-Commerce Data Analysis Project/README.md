@@ -256,7 +256,7 @@ FROM dbo.combined_table
   --2.Create a �view� that keeps the number of monthly visits by users. (Show separately all months from the beginning  business)
 --Don't forget to call up columns you might need later.
 CREATE VIEW month_visits AS
-
+```
 SELECT cust_id ,Years,Months,count(*) num
 
 From dbo.monthly_logs
