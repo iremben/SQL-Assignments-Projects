@@ -224,7 +224,6 @@ DATEDIFF(day, Order_Date, lead(Order_Date,2) over(partition by cust_id order by 
 from elapse) k
 where k.ranks = 1
 ```
-
 - The seventh given task: Write a query that returns customers who purchased both product 11 and product 14, as well as the ratio of these products to the total number of products purchased by all customers. Use CASE Expression, CTE, CAST and/or Aggregate Functions
 ```
 select cust_id
@@ -253,20 +252,16 @@ SELECT cust_id,
 		  --DAY(Order_Date) as day_s
 FROM dbo.combined_table
 ```
-  --2.Create a �view� that keeps the number of monthly visits by users. (Show separately all months from the beginning  business)
---Don't forget to call up columns you might need later.
-CREATE VIEW month_visits AS
+- The second given task: Create a view that keeps the number of monthly visits by users. (Show separately all months from the beginning  business). Don't forget to call up columns you might need later.
 ```
+CREATE VIEW month_visits AS
 SELECT cust_id ,Years,Months,count(*) num
 
 From dbo.monthly_logs
 GROUP BY cust_id,Years,Months
 ```
 
---3. For each visit of customers, create the next month of the visit as a separate column.
---You can order the months using "DENSE_RANK" function.
---then create a new column for each month showing the next month using the order you have made above. (use "LEAD" function.)
---Don't forget to call up columns you might need later.
+- The third given task: For each visit of customers, create the next month of the visit as a separate column. You can order the months using "DENSE_RANK" function. then create a new column for each month showing the next month using the order you have made above. (use "LEAD" function.) Don't forget to call up columns you might need later.
 ```
 SELECT cust_id ,Years,Months,count(*) num,
 lead(count(*)) over(PARTITION BY months order by months) as num_1,
@@ -275,9 +270,7 @@ From dbo.monthly_logs
 GROUP BY cust_id,Years,Months
 order by years,months
 ```
-
---4. Calculate monthly time gap between two consecutive visits by each customer.
---Don't forget to call up columns you might need later.
+- The fourth given task: Calculate monthly time gap between two consecutive visits by each customer. Don't forget to call up columns you might need later.
 ```
 SELECT cust_id ,Years,Months,
 datediff(month, Order_Date,lead(Order_Date) over(order by cust_id)) as month_diff
@@ -287,11 +280,10 @@ GROUP BY cust_id,Years,Months,Order_Date
 order by cust_id
 ```
 
---5.Categorise customers using average time gaps. Choose the most fitted labeling model for you.
---For example: 
---Labeled as �churn� if the customer hasn't made another purchase for the months since they made their first purchase.
---Labeled as �regular� if the customer has made a purchase every month.
---Etc.
+- The second given task: Categorise customers using average time gaps. Choose the most fitted labeling model for you. For example: 
+	- Labeled as churn if the customer hasn't made another purchase for the months since they made their first purchase.
+	- Labeled as regular if the customer has made a purchase every month.
+Etc.
 ```
 select distinct cust_id,avg(day_diff) over(PARTITION by cust_id) as avg_diff,
 case 
@@ -306,19 +298,14 @@ From dbo.monthly_logs
 order by cust_id
 ```
 
---MONTH-WISE RETENT�ON RATE
+## MONTH-WISE RETENTiON RATE
+Find month-by-month customer retention rate  since the start of the business.
 
-
---Find month-by-month customer retention rate  since the start of the business.
-
-
---1. Find the number of customers retained month-wise. (You can use time gaps)
---Use Time Gaps
+- The first given task: Find the number of customers retained month-wise. (You can use time gaps). Use Time Gaps
 ```
 select *
 from monthly_logs
-```
-```
+
 select month(order_date) month_num, count(distinct cust_id) cust_returned
 from combined_table 
 where cust_id in (select distinct cust_id
@@ -418,19 +405,11 @@ where month(order_date) = '11'
 group by month(order_date)
 having month(Order_Date) = '12'
 ``````
+- The second given task: Calculate the month-wise retention rate.
 
+>Basic formula: o	Month-Wise Retention Rate = 1.0 * Number of Customers Retained in The Current Month / Total Number of Customers in the Current Month
 
---//////////////////////
-
-
---2. Calculate the month-wise retention rate.
-
---Basic formula: o	Month-Wise Retention Rate = 1.0 * Number of Customers Retained in The Current Month / Total Number of Customers in the Current Month
-
---It is easier to divide the operations into parts rather than in a single ad-hoc query. It is recommended to use View. 
---You can also use CTE or Subquery if you want.
-
---You should pay attention to the join type and join columns between your views or tables.
+It is easier to divide the operations into parts rather than in a single ad-hoc query. It is recommended to use View. You can also use CTE or Subquery if you want. You should pay attention to the join type and join columns between your views or tables.
 ```
 select month(order_date) month_num, (count(distinct cust_id) * 1.0)/(select count(distinct cust_id) cust
 from combined_table 
@@ -448,8 +427,7 @@ having month(Order_Date) = '2'
 from combined_table 
 where month(order_date) = '2'
 )
-```
-```
+
 select month(order_date) month_num, (count(distinct cust_id) * 1.0)/(select count(distinct cust_id) cust
 from combined_table 
 where month(order_date) = '2'
